@@ -1,0 +1,38 @@
+{
+  "name": "Wellspring Clinic AI Assistant",
+  "model": "GPT-4o Cluster",
+  "voice": {
+    "provider": "ElevenLabs",
+    "voice_name": "Sarah",
+    "speed": 1.0
+  },
+  "transcriber": {
+    "provider": "Deepgram",
+    "model": "Nova-2",
+    "language": "English",
+    "smart_formatting": true
+  },
+  "system_prompt": "file://system-prompt.md",
+  "tools": [
+    "file://tools/check-availability.json",
+    "file://tools/book-appointment.json"
+  ],
+  "widget": {
+    "enabled": true,
+    "position": "bottom-right",
+    "button_text": "📞 Call Dr. Sarah",
+    "button_color": "#1E3A8A"
+  },
+  "settings": {
+    "privacy": {
+      "HIPAA_mode": true,
+      "record_calls": false,
+      "store_transcripts_days": 30
+    },
+    "call_timeout": {
+      "max_duration_seconds": 600,
+      "silence_timeout_seconds": 5,
+      "end_call_on_silence_seconds": 30
+    }
+  }
+}
