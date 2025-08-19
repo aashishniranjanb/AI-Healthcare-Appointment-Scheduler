@@ -1,0 +1,26 @@
+{
+  "name": "check_availability",
+  "description": "Check doctor availability for specific date and time",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "preferred_date": {
+        "type": "string",
+        "description": "Date in YYYY-MM-DD format"
+      },
+      "preferred_time": {
+        "type": "string",
+        "description": "Time in HH:MM format"
+      },
+      "doctor_name": {
+        "type": "string",
+        "description": "Preferred doctor or 'any'"
+      },
+      "appointment_duration": {
+        "type": "integer",
+        "description": "Duration in minutes"
+      }
+    },
+    "required": ["preferred_date", "preferred_time", "appointment_duration"]
+  }
+}

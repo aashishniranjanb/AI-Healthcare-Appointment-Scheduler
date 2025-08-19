@@ -1,0 +1,18 @@
+{
+  "name": "book_appointment",
+  "description": "Book confirmed appointment slot",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "patient_name": { "type": "string" },
+      "phone_number": { "type": "string" },
+      "email": { "type": "string" },
+      "appointment_date": { "type": "string" },
+      "appointment_time": { "type": "string" },
+      "doctor_name": { "type": "string" },
+      "chief_complaint": { "type": "string" },
+      "duration_minutes": { "type": "integer" }
+    },
+    "required": ["patient_name", "phone_number", "appointment_date", "appointment_time"]
+  }
+}
