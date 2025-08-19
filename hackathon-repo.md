@@ -75,34 +75,6 @@ healthcare-appointment-scheduler/
     ├── environment-setup.md       # Environment variables
     └── production-config.md       # Production deployment guide
 ```
-
-## 🚀 Quick Setup Guide
-
-### 1. Vapi.ai Setup (15 minutes)
-1. Create free Vapi.ai account
-2. Import `vapi-config/assistant-config.json`
-3. Configure system prompt from `vapi-config/system-prompt.md`
-4. Add webhook URLs from Make.com scenarios
-
-### 2. Make.com Automation (30 minutes)
-1. Create Make.com account (free tier)
-2. Import scenarios from `make-scenarios/`
-3. Connect Google Calendar credentials
-4. Configure webhook endpoints
-5. Test workflow connections
-
-### 3. Google Calendar Setup (15 minutes)
-1. Enable Google Calendar API
-2. Create service account credentials
-3. Share calendar with service account
-4. Configure calendar ID in Make.com
-
-### 4. Testing & Demo (15 minutes)
-1. Test voice assistant in Vapi playground
-2. Make test appointment booking call
-3. Verify calendar integration
-4. Record demo for submission
-
 ## 🎯 Key Features Demonstrated
 
 ### Core Functionality
@@ -159,41 +131,7 @@ Patient: "Sure, it's John Smith, phone number 555-0123."
 
 AI: "Perfect John! I've booked your teeth cleaning appointment for tomorrow at 2:30 PM. You'll receive a confirmation text shortly. Is there anything else I can help you with?"
 ```
-
-## 🏆 Hackathon Submission Details
-
-### Innovation Score (⭐⭐⭐⭐⭐)
-- Combines cutting-edge voice AI with practical healthcare automation
-- Natural language processing eliminates complex phone systems
-- Real-time integration between voice and scheduling systems
-
-### Execution Score (⭐⭐⭐⭐⭐)
-- Working prototype in 2-3 hours using no-code tools
-- Professional voice interface sounds human-like
-- End-to-end automation from call to calendar booking
-
-### Real-World Impact (⭐⭐⭐⭐⭐)
-- Addresses genuine healthcare scheduling pain points
-- Scalable solution for medical practices of all sizes
-- Immediate deployment ready for production use
-
-### Technical Excellence (⭐⭐⭐⭐⭐)
-- Modern tech stack with robust APIs
-- Comprehensive error handling and edge cases
-- Well-documented codebase and setup process
-
 ## 📞 Contact & Support
-
-### Demo Access
-- **Live Demo**: [Voice Assistant Phone Number]
-- **Calendar View**: [Google Calendar Public Link]
-- **Admin Dashboard**: [Make.com Scenario Dashboard]
-
-### Team Information
-- **Project Lead**: [Your Name]
-- **Email**: [Your Email]
-- **GitHub**: [Repository Link]
-- **Demo Video**: [YouTube/Loom Link]
 
 ## 📄 License
 
