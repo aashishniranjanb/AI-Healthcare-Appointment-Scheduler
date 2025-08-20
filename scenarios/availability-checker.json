@@ -1,0 +1,33 @@
+{
+  "name": "availability-checker",
+  "description": "Scenario to check doctor availability for requested date and time",
+  "modules": [
+    {
+      "type": "webhook",
+      "name": "Check Availability Webhook",
+      "hook": {
+        "url": "https://hook.make.com/your-unique-webhook-url-1",
+        "method": "POST"
+      }
+    },
+    {
+      "type": "google_calendar.get_freebusy",
+      "name": "Check Free/Busy",
+      "calendarId": "wellspring_clinic_calendar_id",
+      "timeMin": "{{addContext.webhook.preferred_date}}T{{addContext.webhook.preferred_time}}:00Z",
+      "timeMax": "{{addMinutes(addContext.webhook.preferred_date + 'T' + addContext.webhook.preferred_time + ':00Z', addContext.webhook.appointment_duration)}}"
+    },
+    {
+      "type": "function",
+      "name": "Check Availability Logic",
+      "implementation": "If freebusy.items length == 0 then return available:true else available:false"
+    },
+    {
+      "type": "webhook.response",
+      "name": "Return Availability",
+      "responseBody": {
+        "available": "{{availability}}"
+      }
+    }
+  ]
+}

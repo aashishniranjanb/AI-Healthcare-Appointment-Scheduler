@@ -1,0 +1,28 @@
+{
+  "name": "confirmation-sender",
+  "description": "Scenario to send appointment confirmation notifications",
+  "modules": [
+    {
+      "type": "webhook",
+      "name": "Confirmation Webhook",
+      "hook": {
+        "url": "https://hook.make.com/your-unique-webhook-url-3",
+        "method": "POST"
+      }
+    },
+    {
+      "type": "email.send",
+      "name": "Send Email Confirmation",
+      "to": "{{email}}",
+      "subject": "Your Appointment is Confirmed",
+      "body": "Dear {{patient_name}}, your appointment with {{doctor_name}} on {{appointment_date}} at {{appointment_time}} has been successfully booked. Thank you for choosing Wellspring Clinic."
+    },
+    {
+      "type": "webhook.response",
+      "name": "Confirmation Response",
+      "responseBody": {
+        "status": "Email sent"
+      }
+    }
+  ]
+}

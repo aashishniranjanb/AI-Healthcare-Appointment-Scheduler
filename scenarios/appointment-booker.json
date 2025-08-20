@@ -1,0 +1,38 @@
+{
+  "name": "appointment-booker",
+  "description": "Scenario to book an appointment once availability is confirmed",
+  "modules": [
+    {
+      "type": "webhook",
+      "name": "Book Appointment Webhook",
+      "hook": {
+        "url": "https://hook.make.com/your-unique-webhook-url-2",
+        "method": "POST"
+      }
+    },
+    {
+      "type": "google_calendar.create_event",
+      "name": "Create Appointment Event",
+      "calendarId": "wellspring_clinic_calendar_id",
+      "event": {
+        "summary": "Appointment: {{patient_name}} - {{doctor_name}}",
+        "start": {
+          "dateTime": "{{addContext.webhook.appointment_date}}T{{addContext.webhook.appointment_time}}:00Z"
+        },
+        "end": {
+          "dateTime": "{{addMinutes(addContext.webhook.appointment_date + 'T' + addContext.webhook.appointment_time + ':00Z', addContext.webhook.duration_minutes)}}"
+        },
+        "description": "{{chief_complaint}}",
+        "attendees": [{"email": "{{email}}"}]
+      }
+    },
+    {
+      "type": "webhook.response",
+      "name": "Send Booking Confirmation",
+      "responseBody": {
+        "success": true,
+        "message": "Appointment booked successfully!"
+      }
+    }
+  ]
+}
